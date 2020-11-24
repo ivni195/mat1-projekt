@@ -6,6 +6,7 @@ import math
 def fermat_factorize(n):
     a = int(math.ceil(math.sqrt(n)))
     b2 = a * a - n
+    # Look for a such that b = a^2 - n is a perfect square.
     while math.sqrt(b2) != math.floor(math.sqrt(b2)):
         a += 1
         b2 = a * a - n

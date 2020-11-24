@@ -19,6 +19,8 @@ def rho_pollard_factorize(n, param):
     x = y = param
     d = 1
     while d == 1:
+        # We use Floyd's cycle-finding algorithm to look for a common remainder modulo p,
+        # where p is a non-trivial factor of n.
         x = f(x)
         y = f(f(y))
         d = gcd_optimized(abs(x - y), n)
